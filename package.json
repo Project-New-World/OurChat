@@ -1,0 +1,17 @@
+{
+  "name": "testetypescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/http/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^20.14.12",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4"
+  }
+}
