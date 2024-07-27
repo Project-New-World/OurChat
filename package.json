@@ -1,17 +1,26 @@
 {
-  "name": "testetypescript",
+  "name": "project-our-chat",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "dev": "tsx watch src/http/server.ts"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "keywords": [],
+  "scripts": {
+    "start": "tsx watch src/http/server.ts",
+    "start:w": "tsx watch src/http/server.ts",
+    "build": "tsup src",
+    "test": "vitest"
+  },
   "devDependencies": {
     "@types/node": "^20.14.12",
     "tsx": "^4.16.2",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "vitest": "^0.27.2",
+    "tsup": "^6.5.0",
+    "ts-node": "10.9.2"
+  },
+  "dependencies": {
+    "fastify": "4.28.1"
   }
 }
