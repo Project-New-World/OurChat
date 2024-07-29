@@ -1,15 +1,16 @@
-interface Person {
-    name: string,
-    age: number
-}
+import fastify from "fastify";
+import { PeopleHandler } from "../core/people/people-handler";
 
-function printPerson(person:Person): Person {
-    return person
-}
+const server = fastify()
 
-const person = printPerson({
-    name: "Teste",
-    age: 10
+server.post("/people", (request,response)=>{
+    return new PeopleHandler().insert(request,response)
+})
+server.get("/people", (request,response)=>{
+    return new PeopleHandler().findAll(request,response)
 })
 
-console.log(person)
+server.listen({
+    host:"0.0.0.0",
+    port: process.env.PORT ?? 3333,
+}as any);

@@ -7,20 +7,23 @@
   "license": "ISC",
   "keywords": [],
   "scripts": {
-    "start": "tsx watch src/http/server.ts",
+    "start": "tsx src/http/server.ts",
     "start:w": "tsx watch src/http/server.ts",
     "build": "tsup src",
-    "test": "vitest"
+    "test": "vitest",
+    "create-table": "node dist/db/create-database.js"
   },
   "devDependencies": {
     "@types/node": "^20.14.12",
+    "dotenv": "^16.4.5",
+    "ts-node": "10.9.2",
+    "tsup": "^6.5.0",
     "tsx": "^4.16.2",
     "typescript": "^5.5.4",
-    "vitest": "^0.27.2",
-    "tsup": "^6.5.0",
-    "ts-node": "10.9.2"
+    "vitest": "^0.27.2"
   },
   "dependencies": {
-    "fastify": "4.28.1"
+    "fastify": "4.28.1",
+    "postgres": "^3.4.4"
   }
 }
