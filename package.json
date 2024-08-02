@@ -23,6 +23,7 @@
     "vitest": "^0.27.2"
   },
   "dependencies": {
+    "@fastify/static": "^7.0.4",
     "fastify": "4.28.1",
     "postgres": "^3.4.4"
   }

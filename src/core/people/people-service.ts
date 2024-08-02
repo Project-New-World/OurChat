@@ -15,8 +15,9 @@ export class PeopleService{
         const person = await this.repository.insert(body)
         return person
     }
-    findById(){
-    
+    async findById(personId:any){
+        const person = await this.repository.findById(personId)
+        return person
     }
     async findAll():Promise<Array<Person>>{
         const people = await this.repository.findAll()
@@ -25,7 +26,7 @@ export class PeopleService{
     update(){
     
     }
-    remove(){
-    
+    async remove(personId:any){
+        return await this.repository.remove(personId)
     }    
 }

@@ -14,8 +14,10 @@ export class PeopleHandler{
         return response.status(201).send(person)
         
     }
-    findById(){
-    
+    async findById(request:any,response:any){
+        const personId:any = request.params.id
+        const person = await this.service.findById(personId)
+        return response.status(200).send(person)
     }
     async findAll(request:any,response:any){
 
@@ -25,7 +27,9 @@ export class PeopleHandler{
     update(){
     
     }
-    remove(){
-    
-    }    
-}
+    async remove(request:any,response:any){
+        const personId:any = request.params.id
+        this.service.remove(personId)
+        return await response.status(200).send("Usuario Deletado")
+    }
+}   
