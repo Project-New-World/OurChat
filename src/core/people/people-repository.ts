@@ -9,7 +9,9 @@ export class PeopleRepository{
         const person = await sql`insert into people (nome, email, data_de_nascimento, senha) VALUES(${name}, ${email}, ${birthDate}, ${password})`
         return person
     }
-    findById(){
+    async findById(personId:any){
+        const person = await sql`SELECT nome, email, data_de_nascimento, senha FROM people WHERE id = ${personId}`
+        return person
     
     }
     async findAll():Promise<any>{
@@ -18,7 +20,7 @@ export class PeopleRepository{
     update(){
     
     }
-    remove(){
-    
+    async remove(personId:any){
+        return await sql`DELETE FROM people WHERE id = ${personId}`
     }    
 }
