@@ -1,7 +1,14 @@
 import fastify from "fastify";
 import {PeopleHandler} from "../app/people/people-handler";
 
+
 const server = fastify()
+
+// Middleware para configurar CSP
+server.addHook('onSend', async (request, reply, payload) => {
+    reply.header('Content-Security-Policy', "default-src 'self'; connect-src 'self' https://ourchat-ii0z.onrender.com"); 
+    return payload;
+});
 
 const peopleHandler = new PeopleHandler()
 
