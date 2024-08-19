@@ -3,6 +3,7 @@ Project to develop a social media.
 
 ## Próximos Passos
 
+Arrumar o toDto() e fromDto() <br>
 Configurar Linter <br>
 Criar Testes <br>
 Configurar Pré-Commit <br>
